@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1.6;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+}
+
+form, div {
+  height: max-content;
+}
+
+aside, main > :is(:first-child, * ~ :not(form)), label, label ~ div, div.button, footer :is(p, h3), nav :is(p, li, h2) {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+h1 {
+  background-color: #fafafa;
+}
+
+* > code, code {
+  background-color: #bbb;
+  background-color: rgba(220,220,220,.5);
+  border-radius: 2px;
+  box-decoration-break: clone;
+  font-family: consolas,"Liberation Mono",courier,monospace;
+  padding: 0 2px;
+  word-wrap: break-word;
+}
+
+footer, nav {
+  background-color: lime;
+  font-size: larger;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+footer h3 {
+  border-top: 5px solid #333;
+  margin: 0 2em;
+}
+
+:is(footer, nav) a > * {
+  background-color: blue;
+  color: white;
+}
+
+:is(footer, nav) a > *:active {
+  background-color: red;
+}
+
+:is(footer, nav) a > *:visited {
+  background-color: purple;
+}
+
+aside h1 {
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+aside > div {
+  border: 3rem solid red;
+  padding: 2rem;
+}
+
+aside p {
+  margin: 1rem 0;
+}
+
+.block-code {
+  border-left: 3px solid black;
+  color: #222;
+  padding: 0 2rem;
+  background-color: #f6faf3;
+  border-color: #4d9f0c;
+}
+
+.bad-code {
+  background-color: #fef7f7;
+  border-color: #e66465;
+}
+
+.inline-icon {
+  display: inline;
+  margin-right: 0.5em;
+  max-height: 1rem;
+  max-width: 1rem;
+  vertical-align: center;
+}
+
+.img {
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  font-wheight: bold;
+}
+
+.fuck {
+  background-color: red;
+  padding: 0.5em;
+  color: white;
+}

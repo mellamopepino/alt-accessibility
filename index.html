@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Alt: accesibilidad</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+
+<body>
+  <aside>
+    <div>
+      <h1>Disclaimer</h1>
+      <div>
+        <p>
+        Acá vamos a discutir un poco sobre la <b>accesibilidad</b> en la web, dando ejemplos
+          del mal uso del html y cómo esto puede afectar la accesibilidad de tu página.
+        </p>
+        <p>
+          Esta página seguramente te resulte algo molesta o confusa, y ese es su objetivo,
+          así que anota tranquilo todo por lo que quieras putearme.
+          Al final del todo dejo mi twitter para que puedas dejarme comentarios al respecto.
+        </p>
+        <p>
+          No molesto más y los dejo sufrir en paz.
+        </p>
+      </div>
+    </div>
+  </aside>
+  <nav>
+    <a href="/">
+      <p aria-hidden="true">Home, link</p>
+      <p class="img" aria-hidden="true">Logo, graphic</p>
+      <p>Home</p>
+    </a>
+    <section>
+      <h2>Index</h2>
+      <ul>
+        <li>
+          <a href="#esto-es-molesto">Esto es molesto</a>
+        </li>
+        <li>
+          <a href="#que-es-accesibilidad">¿A qué te referís con accesibilidad?</a>
+        </li>
+        <li>
+          <a href="#porque-preocuparse">¿Y porqué debería preocuparme?</a>
+        </li>
+        <li>
+          <a href="#ejemplos">Algunos ejemplos</a>
+        </li>
+        <li>
+          <a href="#por-donde-empezar">Por dónde empezar</a>
+        </li>
+      </ul>
+    </section>
+  </nav>
+
+  <main>
+  <h1 id="esto-es-molesto">Esto es molesto</h1>
+  <p>
+    Genial que te parezca molesto!
+    Para eso está esta página, para que te frustres un poco con lo que la mayoría de los usuarios
+    de screen readers se frustran.
+  </p>
+  <div>
+    <p>
+      ¿Para qué frustrarse con eso?
+      En general se dejan los problemas de accesibilidad de lado, pensando que no es tan relevante
+      para el uso de la página.
+      Pero la realidad es que estos problemas afectan a <b>todos</b>.
+      Y es tan importante tenerlos en cuenta como cuando te preocupas por el logo o los colores en
+      el diseño.
+    </P>
+  </div>
+  <p>
+    Esto solo se va a enfocar en los problemas que pueden encontrarse los usuarios de
+    screen readers.
+    De todas formas cabe aclarar que este no es el único grupo a tener en cuenta al pensar en accesibilidad.
+  </p>
+
+  <h2 id="que-es-accesibilidad">¿A qué te referís con accesibilidad?</h2>
+
+  <p>
+    Cuando hablamos de accesibilidad en una página, nos referímos a que la misma sea usable para
+    todos los usuarios, sin importar de qué forma están accediendo a esta.
+    Principalmente refiriendonos a la usabilidad para usuarios con discapacidades físicas o
+    mentales.
+  </p>
+  <p>
+    Por lo que básicamente es entender que no todos los usuarios son iguales.
+    Un usuario puede tener problemas motrices, de vista, baja conexión de internet, o tal vez incluso a uno se le rompió el mouse.
+  </p>
+  <p>
+    No importa cuál sea el motivo, un sitio debe poder ser accesible ya sea usando teclado, mouse
+    o screen readers, entre otros.
+  </p>
+
+  <h2 id="porque-preocuparse">¿Y porqué debería preocuparme?</h2>
+
+  <p>
+    Los problemas de accesibilidad no afectan a unos pocos, sino a todos tus usuarios.
+    Así que es solo una cuestión de querer hacer una página decente.
+  </p>
+  <p>
+    Preocuparse por la accesibilidad es preocuparse por los usuarios.
+  </p>
+
+  <h2 id="ejemplos">Algunos ejemplos</h2>
+
+  <div>
+    <p>
+      Lo primero que hay que tener en cuenta es que los usuarios de screen readers no pueden
+      escanear visualmente la página para encontrar lo que les interesa rápidamente.
+      En cambio, empiezan desde el inicio de esta y van leyendo cada sección <b>linealmente</b>.
+      Por lo que el orden es importante y está declarado por el markup.
+      En esta página misma podés notar lo tedioso que puede ser el ver solo una cosa a la vez.
+    </p>
+  </div>
+  <p>
+    Otro tema a remarcar, es que los screen readers también permiten navegar la página de header en header, o de link en link, entre otras opciones.
+    Por esto mismo es muy importante hacer un uso correcto del markup.
+    Si tu página no tiene la estructura correcta, el usuario no va a poder navegar de forma comoda a la parte en la que está interesado.
+  </p>
+  <p>
+    Entonces, recordá hacer uso adecuado del markup, dandole la estructura y el orden correcto a tu página.
+  </p>
+  <p>
+    Seguramente ya hayas notado molestas varias de estas cosas al leer esta página.
+    Y eso de que es bastante simple, imaginate en páginas con formularios, varios links,
+    botones...
+  </p>
+  <p>
+    Veamos ejemplos más puntuales:
+  </p>
+
+  <h3>Mal uso del markup</h3>
+
+  <h4>Listas</h4>
+
+  <p>Digamos que querés tener una lista no ordenada. Esta se vera algo como lo siguiente:</p>
+
+  <ul>
+    <li>Primer elemento</li>
+    <li>Segundo elemento</li>
+    <li>Tercer elemento</li>
+  </ul>
+
+  <p>Con el siguiente HTML podés lograr tener una lista:</p>
+
+  <code class="block-code">
+    &lt;p&gt; - Primer elemento.&lt;/p&gt;<br>
+    &lt;p&gt; - Segundo elemento.&lt;/p&gt;<br>
+    &lt;p&gt; - Tercer elemento.&lt;/p&gt;<br>
+  </code>
+
+  <p>Pero de esa forma no se sabe que esa porción de HTML representa una lista. Sino que cada
+  elemento de la lista en realidad es un párrafo, y los bullets pasan a ser guiones.</p>
+
+  <h4>Headings</h4>
+
+  <p>
+    Otro ejemplo de un mal uso del markup es con los Headings, o cabeceras en español.
+    Es importante el buen uso de estos, para mantener una estructura a lo largo de la página.
+    Programas como los screen readers permiten navegar una página saltando de un heading a otro, de
+    esta forma el usuario no debe escuchar todo lo que está en la página y encontrar lo que le
+    interesa más rápidamente.
+    Es posible que no estés usando los tags de HTML correctos para especificar los headings, en
+    cambio uses algo como un div, un span o un font. Veamos el siguiente ejemplo de un mal uso:
+  </p>
+
+  <code class="block-code">
+    &lt;font size="10"&gt;Título&lt;/p&gt;<br>
+    &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
+    &lt;font size="6"&gt;Subtítulo&lt;/p&gt;<br>
+    &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
+  </code>
+
+  <h4>Decoraciones</h4>
+
+  <p>
+    ¿Y si querés, no se, subrayar algo?
+    Eso es fácil, solo pones varios guiones abajo de lo que querés subrayar y listo.
+  </p>
+  <p>
+    La realidad es que no, no deberías estar haciendo eso para subrayar. El problema con hacerlo de
+    esta forma es que un usuario que esté usando un screen reader va a escuchar cada guión, esto
+    quiere decir que se escucharía algo como "guión, guión, guión". Completamente molesto e
+    innecesario cuando podés lograr lo mismo con css.
+  </p>
+
+  <h3>Mal uso de imagenes</h3>
+
+  <h4>Imagenes con contenido importante</h4>
+
+  <p>
+    Dado que usuarios de screen readers no van a poder ver las imagenes que tengas en tu página, o se
+    les va a dificultar por baja visión, es importante hacer uso del texto alternativo.
+  </p>
+  <div>
+    <p>
+      El texto alternativo es usado para dar una descripción de la imagen. Se puede agregar usando el atributo <code>alt</code> de la siguiente forma:
+    </p>
+  </div>
+  <code class="block-code">
+    &lt;img src="panpan.png" alt="Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas"&gt;
+  </code>
+  <p>
+    Por ejemplo si querémos tener estas dos imagenes en nuestra página:
+  </p>
+  <div>
+    <p class="img">
+      Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas, graphic
+    </p>
+  </div>
+  <div>
+    <p class="img">
+      Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas, graphic
+    </p>
+  </div>
+  <p>
+    Es importante que cada una tenga un texto alternativo descriptivo.
+    En este caso vieron que usé dos veces el mismo texto alternativo.
+    Eso no es porque puse dos veces la misma imagen, sino porque para la primera me esforcé y puse
+    un alt descriptivo, pero para la segunda simplemente copíe y pegué todo el tag de la primera y
+    no me gasté en cambiar el alt.
+    Bastante mal de mi parte.
+  </p>
+
+  <h4>Imagenes decorativas</h4>
+
+  <p>
+    Las imagenes en una página pueden también ser decorativas.
+    Esto se refiere a que no agregan contenido a la página, sino que su rol es simplemente visual.
+  </p>
+  <p>
+    Tal vez querés mostrar una imagen de un gatito que encontraste en internet ayer a la noche, pero
+    la cual no suma nada al contenido de tu página, por fuera de ser súper tierna.
+  </p>
+  <p>
+    Y como ya sabes del uso de alt decidís no ponerle uno, porque como es decorativa no importa. Así que
+    la agregas re feliz. Mira, es un re lindo gatito:
+  </p>
+  <div>
+    <p class="img">
+        Screenshot from 2018-10-25 23-04-51.png, graphic
+    </p>
+  </div>
+  <p>
+    Bueno, no sale como esperabas.
+    La realidad es que si no ponés el atributo alt, los screen readers van a leer el nombre del
+    archivo con la esperanza de que eso sea de ayuda.
+    En la mayoría de los casos, no lo es.
+  </p>
+  <p>
+    Si tu imagen no agrega valor al contenido de la página, y es puramente para decoración, entonces
+    podés especificar un alt vacío o mostrarla como un background por CSS.
+  </p>
+
+    <h3>Mal uso de formularios</h3>
+    <p>
+      Veamos el siguiente formulario, y notemos lo molesto y confuso que puede llegar a ser:
+    </p>
+    <form>
+      <div>
+        <label for="input-nombre">Nombre</label>
+        <div>
+          <input type="text" id="input-nombre" name="nombre" aria-required="true">
+        </div>
+        <div aria-hidden="true">*</div>
+      </div>
+      <div>
+        <label for="input-asunto">Asunto</label>
+        <div>
+          <input type="text" id="input-asunto" name="asunto" aria-required="true">
+        </div>
+        <div aria-hidden="true">*</div>
+      </div>
+      <div class="button">
+        <button type="button" aria-labelledby="button-download-title">
+          <title id="button-download-title">Download</title>
+          <img class="inline-icon" src="./github.png" alt="">
+        </button>
+      </div>
+      <div>
+        <label for="input-comentarios"> Comentarios </label>
+        <div>
+          <input type="text" id="input-comentarios" name="comentarios">
+        </div>
+      </div>
+      <div class="button">
+        <button type="submit">
+          Guardar
+        </button>
+      </div>
+    </form>
+    <p>
+      ¿Entendiste fácilmente cuales campos eran obligatorios?
+      ¿Te fué fácil identificar para qué era cada input?
+      ¿Y el primer botón, entendiste para qué era?
+    </p>
+    <p>
+      Un problema común es que no se asocian los labels con sus inputs.
+      Esto pasa si usas, por ejemplo, un div para escribir el label. De esta forma podés lograr que
+      visualmente se asocie ese texto al input, pero desde le html no está asociado de ninguna
+      manera.
+      Un poco de código:
+    </p>
+    <code class="block-code bad-code">
+      &lt;div class="label"&gt;Nombre:&lt;/div&gt;<br>
+      &lt;input type="text" id="nombre" name="nombre"&gt;
+    </code>
+    <p>
+      En este ejemplo el label no está asociado a su input.
+      De esta forma solo es claro cómo llenar el input viendolo,
+      pero usuarios de screen readers no tendrían información alguna de para qué sirve ese input y
+      cómo debería llenarlo.
+      Un mejor ejemplo de código:
+    </p>
+    <code class="block-code">
+      &lt;div&gt;<br>
+      &nbsp;&nbsp;&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;<br>
+      &nbsp;&nbsp;&lt;input type="text" id="nombre" name="nombre"&gt;<br>
+      &lt;/div&gt;<br>
+    </code>
+    <div>
+      <p>
+        Ahora tenemos un tag <code>label</code> que hace referencia a nuestro input, de esta forma
+        logramos asociar un label a su input correspondiente y hacer más descriptivos a los inputs en
+        consecuencia.
+      </p>
+    </div>
+    <p>
+      Otro tema a notar en nuestro ejemplo de formulario es que no se distinguía qué inputs eran
+      obligatorios y cuales no. Sí, había asteriscos que es lo usual para remarcar visialmente que
+      un input es requerido, pero este no estaba asociado a su input. Y además aunque lo asociemos
+      junto al label este va a ser leido como "asterísco", no es muy claro a qué se refiere.
+      En el siguiente ejemplo podemos ver esta mala práctica:
+    </p>
+    <code class="block-code bad-code">
+      &lt;div&gt;<br>
+      &nbsp;&nbsp;&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;<br>
+      &nbsp;&nbsp;&lt;input type="text" id="nombre" name="nombre"&gt;<br>
+      &nbsp;&nbsp;&lt;span&gt;*&lt;span&gt;<br>
+      &lt;/div&gt;<br>
+    </code>
+    <p>
+      Si bien visualmente podemos hacer la asociación, no es tan fácil hacerla usando un screen
+      reader.
+      Una forma de mejorar esto es especificar junto al label que el input es requerido o usando un
+      atributo de aria. En el siguiente código vemos ambos casos:
+    </p>
+    <code class="block-code">
+      &lt;div&gt;<br>
+      &nbsp;&nbsp;&lt;label for="nombre"&gt;Nombre (obligatorio):&lt;/label&gt;<br>
+      &nbsp;&nbsp;&lt;input type="text" id="nombre" name="nombre"&gt;<br>
+      &lt;/div&gt;<br>
+
+      &lt;div&gt;<br>
+      &nbsp;&nbsp;&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;<br>
+      &nbsp;&nbsp;&lt;input type="text" id="nombre" name="nombre" aria-required="true"&gt;<br>
+      &nbsp;&nbsp;&lt;span aria-hidden="true"&gt;*&lt;span&gt;<br>
+      &lt;/div&gt;<br>
+    </code>
+    <div>
+      <p>
+        En el primer caso simplemente especificamos en el label que el input es requerido.
+        En el segundo caso hicimos un poco más. Definimos que el tag era requerido agregando el
+        atributo <code>aria-required="true"</code>. Y escondimos de los screen readers el asterísco
+        con el atributo <code>aria-hidden="true"</code> ya que no aporta nada para estos usuarios.
+      </p>
+    </div>
+    <p>
+      Por último otro punto importante son los botones, por ejemplo cuando se quiere tener un ícono como botón.
+      Esto es lo que pasaba con el primer botón de nuestro formulario de ejemplo, si ponemos un
+      ícono para que sea nuestro botón tenemos dos problemas: no todo el mundo va a entender a que
+      hace referencia el ícono y un usuario con un screen reader no va a tener manera de identificar
+      para qué es el botón, ya que ni puede ver el ícono.
+      Veamos un mal ejemplo en código:
+    </p>
+    <code class="block-code bad-code">
+      &lt;button type="button"&gt;<br>
+      &nbsp;&nbsp;&lt;img src="./alguna-imagen.png"&gt;<br>
+      &lt;/div&gt;<br>
+    </code>
+    <p>
+      En este ejemplo se ve que el botón no tiene ningún texto asociado que haga referencia a su
+      uso, y además de esto tenemos una imagen decorativa.
+      El siguiente ejemplo es un poco mejor:
+    </p>
+    <code class="block-code bad-code">
+      &lt;button type="button" aria-labelledby="btn-upload-image-title"&gt;<br>
+      &nbsp;&nbsp;&lt;title id="btn-upload-image-title"&gt;Upload image&lt;/title&gt;<br>
+      &nbsp;&nbsp;&lt;img src="./alguna-imagen.png" aria-hidden="true"&gt;<br>
+      &lt;/div&gt;<br>
+    </code>
+    <div>
+      <p>
+        El tag <code>&lt;title&gt;</code> nos permite asociar un texto al botón, teniendo la ventaja de que algunos browsers lo van a mostrar  como un tooltip al poner el mouse encima.
+        Y en el botón usamos el atributo <code>aria-labelledby</code> que nos permite asociar el
+        texto del <code>&lt;title&gt;</code>, haciendo al botón un poco más descriptivo para los
+        usuarios de screen readers.
+      </p>
+    </div>
+    <div>
+      <p>
+        Además de ahora tener una mejor descripción del botón, también agregamos un atributo
+        <code>aria-hidden="true"</code> a la imagen. Este lo que hace es esconder el elemento de los
+        screen readers, de esta forma nuestra imagen no molesta.
+      </p>
+    </div>
+
+    <h2 id="por-donde-empezar">Por dónde empezar</h2>
+    <p>
+      Se dejaron afuera muchas cosas, esto no es más que una simple introducción al tema.
+      Así que dejo algunos links útiles para aprender más al respecto.
+    </p>
+    <ul>
+      <li><a href="https://developer.cdn.mozilla.net/en-US/docs/Web/HTML/Element#Content_sectioning">Referencia de elementos de HTML.</a></li>
+      <li><a href="https://developer.cdn.mozilla.net/en-US/docs/Learn/Accessibility">MDN guía de accesibilidad</a>, una muy buena opción para empezar.</li>
+      <li><a href="https://webaim.org/standards/wcag/checklist">Webaim checklist.</a></li>
+      <li><a href="https://wave.webaim.org/">Herramienta de evaluación de accesibilidad.</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    <section>
+      <h3>
+        <div>
+          Por dónde <span class="fuck">putearme</span>:
+        </div>
+      </h3>
+      <a href="https://twitter.com/pepin_saltarin">
+        <p aria-hidden="true">Twitter, link</p>
+        <p class="img" aria-hidden="true">Twitter, graphic</p>
+        <p>Twitter</p>
+      </a>
+    </section>
+    <section>
+      <h3>
+        Código fuente:
+      </h3>
+      <a href="https://twitter.com/pepin_saltarin">
+        <p aria-hidden="true">Github, link</p>
+        <p class="img" aria-hidden="true">Github, graphic</p>
+        <p>Github</p>
+      </a>
+    <section>
+  </footer>
+</body>
+</html>
