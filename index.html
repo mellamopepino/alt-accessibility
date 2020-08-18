@@ -231,10 +231,24 @@
     cambio uses algo como un div, un span o un font. Veamos el siguiente ejemplo de un mal uso:
   </p>
 
-  <code class="block-code">
-    &lt;font size="10"&gt;Título&lt;/p&gt;<br>
+  <code class="block-code bad-code">
+    &lt;font size="10"&gt;Título&lt;/font&gt;<br>
     &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
-    &lt;font size="6"&gt;Subtítulo&lt;/p&gt;<br>
+    &lt;font size="6"&gt;Subtítulo&lt;/font&gt;<br>
+    &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
+  </code>
+
+  <p>
+    En este caso podemos lograr que visualmente se distingan como headings, pero a los screen
+    readers no les va a ser posible notar esta distinción.
+    Para lograr esto último necesitamos entonces usar los elementos de headings, lo cual podemos ver
+    en el siguiente ejemplo:
+  </p>
+
+  <code class="block-code">
+    &lt;h1&gt;Título&lt;/h1&gt;<br>
+    &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
+    &lt;h2&gt;Subtítulo&lt;/h2&gt;<br>
     &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
   </code>
 
