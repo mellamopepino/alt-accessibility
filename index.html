@@ -12,8 +12,12 @@
       <h1>Disclaimer</h1>
       <div>
         <p>
-        Acá vamos a discutir un poco sobre la <b>accesibilidad</b> en la web, dando ejemplos
-          del mal uso del html y cómo esto puede afectar la accesibilidad de tu página.
+          Acá vamos a discutir un poco sobre la <b>accesibilidad</b> en la web,
+          dando ejemplos del mal uso del
+          <a href="https://developer.mozilla.org/es/docs/Web/HTML">
+            <b>HTML</b> (HyperText Markup Language)
+          </a>
+          y cómo esto puede afectar la accesibilidad de tu página.
         </p>
         <p>
           Esta página seguramente te resulte algo molesta o confusa, y ese es su objetivo,
@@ -55,283 +59,286 @@
   </nav>
 
   <main>
-  <h1 id="esto-es-molesto">Esto es molesto</h1>
-  <p>
-    Genial que te parezca molesto!
-    Para eso está esta página, para que te frustres un poco con lo que la mayoría de los usuarios
-    de screen readers se frustran.
-  </p>
-  <div>
+    <h1 id="esto-es-molesto">Esto es molesto</h1>
     <p>
-      ¿Para qué frustrarse con eso?
-      En general se dejan los problemas de accesibilidad de lado, pensando que no es tan relevante
-      para el uso de la página.
-      Pero la realidad es que estos problemas afectan a <b>todos</b>.
-      Y es tan importante tenerlos en cuenta como cuando te preocupas por el logo o los colores en
-      el diseño.
-    </P>
-  </div>
-  <p>
-    Esto solo se va a enfocar en los problemas que pueden encontrarse los usuarios de
-    screen readers.
-    De todas formas cabe aclarar que este no es el único grupo a tener en cuenta al pensar en accesibilidad.
-  </p>
-
-  <h2 id="que-es-accesibilidad">¿A qué te referís con accesibilidad?</h2>
-
-  <p>
-    Cuando hablamos de accesibilidad en una página, nos referímos a que la misma sea usable para
-    todos los usuarios, sin importar de qué forma están accediendo a esta.
-    Principalmente refiriendonos a la usabilidad para usuarios con capacidades diferentes.
-  </p>
-  <p>
-    Por lo que básicamente es entender que no todos los usuarios son iguales.
-    Un usuario puede tener problemas motrices, de vista, baja conexión de internet, o tal vez incluso a uno se le rompió el mouse.
-  </p>
-  <p>
-    No importa cuál sea el motivo, un sitio debe poder ser accesible ya sea usando teclado, mouse
-    o screen readers, entre otros.
-  </p>
-
-  <h2 id="porque-preocuparse">¿Y porqué debería preocuparme?</h2>
-
-  <p>
-    Los problemas de accesibilidad no afectan a unos pocos, sino a todos tus usuarios.
-    Así que es solo una cuestión de querer hacer una página decente.
-  </p>
-  <p>
-    Preocuparse por la accesibilidad es preocuparse por los usuarios.
-  </p>
-
-  <h2 id="ejemplos">Algunos ejemplos</h2>
-
-  <div>
+      Genial que te parezca molesto!
+      Para eso está esta página, para que te frustres un poco con lo que la mayoría de los usuarios
+      de screen readers se frustran.
+    </p>
+    <div>
+      <p>
+        ¿Para qué frustrarse con eso?
+        En general se dejan los problemas de accesibilidad de lado, pensando que no es tan relevante
+        para el uso de la página.
+        Pero la realidad es que estos problemas afectan a <b>todos</b>.
+        Y es tan importante tenerlos en cuenta como cuando te preocupas por el logo o los colores en
+        el diseño.
+      </P>
+    </div>
     <p>
-      Lo primero que hay que tener en cuenta es que los usuarios de screen readers no pueden
-      escanear visualmente la página para encontrar lo que les interesa rápidamente.
-      En cambio, empiezan desde el inicio de esta y van leyendo cada sección <b>linealmente</b>.
-      Por lo que el orden es importante y está declarado por el markup.
-      En esta página misma podés notar lo tedioso que puede ser el ver solo una cosa a la vez.
+      Esto solo se va a enfocar en los problemas que pueden encontrarse los usuarios de
+      screen readers.
+      De todas formas cabe aclarar que este no es el único grupo a tener en cuenta al pensar en accesibilidad.
     </p>
-  </div>
-  <p>
-    Otro tema a remarcar, es que los screen readers también permiten navegar la página de header en header, o de link en link, entre otras opciones.
-    Por esto mismo es muy importante hacer un uso correcto del markup.
-    Si tu página no tiene la estructura correcta, el usuario no va a poder navegar de forma comoda a la parte en la que está interesado.
-  </p>
-  <p>
-    Entonces, recordá hacer uso adecuado del markup, dandole la estructura y el orden correcto a tu página.
-  </p>
-  <p>
-    Seguramente ya hayas notado molestas varias de estas cosas al leer esta página.
-    Y eso que es bastante simple, imaginate en páginas con formularios, varios links,
-    botones...
-  </p>
-  <p>
-    Veamos ejemplos más puntuales:
-  </p>
 
-  <h3>Mal uso del markup</h3>
+    <h2 id="que-es-accesibilidad">¿A qué te referís con accesibilidad?</h2>
 
-  <p>
-    Usar los elementos de HTML apropiados para cada cosa no solo tiene ventajas para los screen
-    readers, sino que varios elementos como los botones tienen funcionalidad ya incorporada.
-    Sin dejar de lado tampoco el hecho de que un buen uso de HTML da una estructura clara a tu
-    página, haciendo más fácil la selección de elementos para incorporar estilos desde CSS.
-  </p>
-
-  <p>
-    Pueden ver la
-    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">lista de elementos de HTML</a>
-    para tener una guía de cuales existen y para qué se usan.
-  </p>
-
-  <h4>Listas</h4>
-
-  <p>Digamos que querés tener una lista no ordenada. Con el siguiente HTML podés lograrlo:</p>
-
-  <code class="block-code bad-code">
-    &lt;p&gt; - Primer elemento.&lt;/p&gt;<br>
-    &lt;p&gt; - Segundo elemento.&lt;/p&gt;<br>
-    &lt;p&gt; - Tercer elemento.&lt;/p&gt;<br>
-  </code>
-
-  <p>
-    Pero de esa forma no se sabe que esa porción de HTML representa una lista.
-    Sino que cada elemento de esta es en realidad es un párrafo, y los bullets pasan a ser guiones.
-  </p>
-
-  <div>
     <p>
-      Para lograr hacer una lista no ordenada tenemos los elementos <code>&lt;ul&gt;</code> y <code>&lt;li&gt;</code>.
-      Podemos ver su uso en el siguiente ejemplo:
+      Cuando hablamos de accesibilidad en una página, nos referímos a que la misma sea usable para
+      todos los usuarios, sin importar de qué forma están accediendo a esta.
+      Principalmente refiriendonos a la usabilidad para usuarios con capacidades diferentes.
     </p>
-  </div>
-
-  <code class="block-code">
-    &lt;ul&gt;<br>
-    &nbsp;&nbsp;&lt;li&gt;Primer elemento.&lt;/li&gt;<br>
-    &nbsp;&nbsp;&lt;li&gt;Segundo elemento.&lt;/li&gt;<br>
-    &nbsp;&nbsp;&lt;li&gt;Tercer elemento.&lt;/li&gt;<br>
-    &lt;/ul&gt;
-  </code>
-
-  <p>
-    Con eso conseguiremos algo que se ve de la siguiente manera:
-  </p>
-
-  <ul>
-    <li>Primer elemento</li>
-    <li>Segundo elemento</li>
-    <li>Tercer elemento</li>
-  </ul>
-
-  <p>
-    Después podemos usar CSS para modificar los estilos de nuestras listas y conseguir que se vean como queremos.
-    Por ejemplo si queremos que se vea así:
-  </p>
-
-  <ul class="cool-list">
-    <li>Primer elemento</li>
-    <li>Segundo elemento</li>
-    <li>Tercer elemento</li>
-  </ul>
-
-  <p>
-    Tendríamos el siguiente HTML:
-  </p>
-
-  <code class="block-code">
-    &lt;ul class="cool-list"&gt;<br>
-    &nbsp;&nbsp;&lt;li&gt;Primer elemento.&lt;/li&gt;<br>
-    &nbsp;&nbsp;&lt;li&gt;Segundo elemento.&lt;/li&gt;<br>
-    &nbsp;&nbsp;&lt;li&gt;Tercer elemento.&lt;/li&gt;<br>
-    &lt;/ul&gt;
-  </code>
-
-  <p>
-    Con el siguiente CSS:
-  </p>
-
-  <code class="block-code">
-    .cool-list {
-
-    }
-  </code>
-
-  <h4>Headings</h4>
-
-  <p>
-    Otro ejemplo de un mal uso del markup es con los Headings, o cabeceras en español.
-    Es importante el buen uso de estos, para mantener una estructura a lo largo de la página.
-    Programas como los screen readers permiten navegar una página saltando de un heading a otro, de
-    esta forma el usuario no debe escuchar todo lo que está en la página y encontrar lo que le
-    interesa más rápidamente.
-    Es posible que no estés usando los tags de HTML correctos para especificar los headings, en
-    cambio uses algo como un div, un span o un font. Veamos el siguiente ejemplo de un mal uso:
-  </p>
-
-  <code class="block-code bad-code">
-    &lt;font size="10"&gt;Título&lt;/font&gt;<br>
-    &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
-    &lt;font size="6"&gt;Subtítulo&lt;/font&gt;<br>
-    &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
-  </code>
-
-  <p>
-    En este caso podemos lograr que visualmente se distingan como headings, pero a los screen
-    readers no les va a ser posible notar esta distinción.
-    Para lograr esto último necesitamos entonces usar los elementos de headings, lo cual podemos ver
-    en el siguiente ejemplo:
-  </p>
-
-  <code class="block-code">
-    &lt;h1&gt;Título&lt;/h1&gt;<br>
-    &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
-    &lt;h2&gt;Subtítulo&lt;/h2&gt;<br>
-    &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
-  </code>
-
-  <h4>Decoraciones</h4>
-
-  <p>
-    ¿Y si querés, no se, subrayar algo?
-    Eso es fácil, solo pones varios guiones abajo de lo que querés subrayar y listo.
-  </p>
-  <p>
-    La realidad es que no, no deberías estar haciendo eso para subrayar. El problema con hacerlo de
-    esta forma es que un usuario que esté usando un screen reader va a escuchar cada guión, esto
-    quiere decir que se escucharía algo como "guión, guión, guión". Completamente molesto e
-    innecesario cuando podés lograr lo mismo con css.
-  </p>
-
-  <h3>Mal uso de imagenes</h3>
-
-  <h4>Imagenes con contenido importante</h4>
-
-  <p>
-    Dado que usuarios de screen readers no van a poder ver las imagenes que tengas en tu página, o se
-    les va a dificultar por baja visión, es importante hacer uso del texto alternativo.
-  </p>
-  <div>
     <p>
-      El texto alternativo es usado para dar una descripción de la imagen. Se puede agregar usando el atributo <code>alt</code> de la siguiente forma:
+      Por lo que básicamente es entender que no todos los usuarios son iguales.
+      Un usuario puede tener problemas motrices, de vista, baja conexión de internet, o tal vez incluso a uno se le rompió el mouse.
     </p>
-  </div>
-  <code class="block-code">
-    &lt;img src="panpan.png" alt="Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas"&gt;
-  </code>
-  <p>
-    Por ejemplo si querémos tener estas dos imagenes en nuestra página:
-  </p>
-  <div>
-    <p class="img">
-      Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas, graphic
+    <p>
+      No importa cuál sea el motivo, un sitio debe poder ser accesible ya sea usando teclado, mouse
+      o screen readers, entre otros.
     </p>
-  </div>
-  <div>
-    <p class="img">
-      Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas, graphic
-    </p>
-  </div>
-  <p>
-    Es importante que cada una tenga un texto alternativo descriptivo.
-    En este caso vieron que usé dos veces el mismo texto alternativo.
-    Eso no es porque puse dos veces la misma imagen, sino porque para la primera me esforcé y puse
-    un alt descriptivo, pero para la segunda simplemente copíe y pegué todo el tag de la primera y
-    no me gasté en cambiar el alt.
-    Bastante mal de mi parte.
-  </p>
 
-  <h4>Imagenes decorativas</h4>
+    <h2 id="porque-preocuparse">¿Y porqué debería preocuparme?</h2>
 
-  <p>
-    Las imagenes en una página pueden también ser decorativas.
-    Esto se refiere a que no agregan contenido a la página, sino que su rol es simplemente visual.
-  </p>
-  <p>
-    Tal vez querés mostrar una imagen de un gatito que encontraste en internet ayer a la noche, pero
-    la cual no suma nada al contenido de tu página, por fuera de ser súper tierna.
-  </p>
-  <p>
-    Y como ya sabes del uso de alt decidís no ponerle uno, porque como es decorativa no importa. Así que
-    la agregas re feliz. Mira, es un re lindo gatito:
-  </p>
-  <div>
-    <p class="img">
-        Screenshot from 2018-10-25 23-04-51.png, graphic
+    <p>
+      Los problemas de accesibilidad no afectan a unos pocos, sino a todos tus usuarios.
+      Así que es solo una cuestión de querer hacer una página decente.
     </p>
-  </div>
-  <p>
-    Bueno, no sale como esperabas.
-    La realidad es que si no ponés el atributo alt, los screen readers van a leer el nombre del
-    archivo con la esperanza de que eso sea de ayuda.
-    En la mayoría de los casos, no lo es.
-  </p>
-  <p>
-    Si tu imagen no agrega valor al contenido de la página, y es puramente para decoración, entonces
-    podés especificar un alt vacío o mostrarla como un background por CSS.
-  </p>
+    <p>
+      Preocuparse por la accesibilidad es preocuparse por los usuarios.
+    </p>
+
+    <h2 id="ejemplos">Algunos ejemplos</h2>
+
+    <div>
+      <p>
+        Lo primero que hay que tener en cuenta es que los usuarios de screen readers no pueden
+        escanear visualmente la página para encontrar lo que les interesa rápidamente.
+        En cambio, empiezan desde el inicio de esta y van leyendo cada sección <b>linealmente</b>.
+        Por lo que el orden es importante y está declarado por el
+        <a href="https://es.wikipedia.org/wiki/Lenguaje_de_marcado">markup</a>
+        En esta página misma podés notar lo tedioso que puede ser el ver solo una cosa a la vez.
+      </p>
+    </div>
+    <p>
+      Otro tema a remarcar, es que los screen readers también permiten navegar la página de header en header, o de link en link, entre otras opciones.
+      Por esto mismo es muy importante hacer un uso correcto del markup.
+      Si tu página no tiene la estructura correcta, el usuario no va a poder navegar de forma comoda a la parte en la que está interesado.
+    </p>
+    <p>
+      Entonces, recordá hacer uso adecuado del markup, dandole la estructura y el orden correcto a tu página.
+    </p>
+    <p>
+      Seguramente ya hayas notado molestas varias de estas cosas al leer esta página.
+      Y eso que es bastante simple, imaginate en páginas con formularios, varios links,
+      botones...
+    </p>
+    <p>
+      Veamos ejemplos más puntuales:
+    </p>
+
+    <h3>Mal uso del markup</h3>
+
+    <p>
+      Usar los elementos de HTML apropiados para cada cosa no solo tiene ventajas para los screen
+      readers, sino que varios elementos como los botones tienen funcionalidad ya incorporada.
+      Sin dejar de lado tampoco el hecho de que un buen uso de HTML da una estructura clara a tu
+      página, haciendo más fácil la selección de elementos para incorporar estilos desde
+      <a href="https://developer.mozilla.org/es/docs/Web/CSS"><b>CSS</b> (Cascading Style Sheets)</a>.
+    </p>
+
+    <p>
+      Pueden ver la
+      <a href="https://developer.mozilla.org/es/docs/Web/HTML/Elemento">lista de elementos de HTML</a>
+      para tener una guía de cuales existen y para qué se usan.
+    </p>
+
+    <h4>Listas</h4>
+
+    <p>Digamos que querés tener una lista no ordenada. Con el siguiente HTML podés lograrlo:</p>
+
+    <code class="block-code bad-code">
+      &lt;p&gt; - Primer elemento.&lt;/p&gt;<br>
+      &lt;p&gt; - Segundo elemento.&lt;/p&gt;<br>
+      &lt;p&gt; - Tercer elemento.&lt;/p&gt;<br>
+    </code>
+
+    <p>
+      Pero de esa forma no se sabe que esa porción de HTML representa una lista.
+      Sino que cada elemento de esta es en realidad es un párrafo, y los bullets pasan a ser guiones.
+    </p>
+
+    <div>
+      <p>
+        Para lograr hacer una lista no ordenada tenemos los elementos <code>&lt;ul&gt;</code> y <code>&lt;li&gt;</code>.
+        Podemos ver su uso en el siguiente ejemplo:
+      </p>
+    </div>
+
+    <code class="block-code">
+      &lt;ul&gt;<br>
+      &nbsp;&nbsp;&lt;li&gt;Primer elemento.&lt;/li&gt;<br>
+      &nbsp;&nbsp;&lt;li&gt;Segundo elemento.&lt;/li&gt;<br>
+      &nbsp;&nbsp;&lt;li&gt;Tercer elemento.&lt;/li&gt;<br>
+      &lt;/ul&gt;
+    </code>
+
+    <p>
+      Con eso conseguiremos algo que se ve de la siguiente manera:
+    </p>
+
+    <ul>
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+      <li>Tercer elemento</li>
+    </ul>
+
+    <p>
+      Después podemos usar CSS para modificar los estilos de nuestras listas y conseguir que se vean como queremos.
+      Por ejemplo si queremos que se vea así:
+    </p>
+
+    <ul class="cool-list">
+      <li>Primer elemento</li>
+      <li>Segundo elemento</li>
+      <li>Tercer elemento</li>
+    </ul>
+
+    <p>
+      Tendríamos el siguiente HTML:
+    </p>
+
+    <code class="block-code">
+      &lt;ul class="cool-list"&gt;<br>
+      &nbsp;&nbsp;&lt;li&gt;Primer elemento.&lt;/li&gt;<br>
+      &nbsp;&nbsp;&lt;li&gt;Segundo elemento.&lt;/li&gt;<br>
+      &nbsp;&nbsp;&lt;li&gt;Tercer elemento.&lt;/li&gt;<br>
+      &lt;/ul&gt;
+    </code>
+
+    <p>
+      Con el siguiente CSS:
+    </p>
+
+    <code class="block-code">
+      .cool-list {
+
+      }
+    </code>
+
+    <h4>Headings</h4>
+
+    <p>
+      Otro ejemplo de un mal uso del markup es con los Headings, o cabeceras en español.
+      Es importante el buen uso de estos, para mantener una estructura a lo largo de la página.
+      Programas como los screen readers permiten navegar una página saltando de un heading a otro, de
+      esta forma el usuario no debe escuchar todo lo que está en la página y encontrar lo que le
+      interesa más rápidamente.
+      Es posible que no estés usando los tags de HTML correctos para especificar los headings, en
+      cambio uses algo como un div, un span o un font. Veamos el siguiente ejemplo de un mal uso:
+    </p>
+
+    <code class="block-code bad-code">
+      &lt;font size="10"&gt;Título&lt;/font&gt;<br>
+      &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
+      &lt;font size="6"&gt;Subtítulo&lt;/font&gt;<br>
+      &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
+    </code>
+
+    <p>
+      En este caso podemos lograr que visualmente se distingan como headings, pero a los screen
+      readers no les va a ser posible notar esta distinción.
+      Para lograr esto último necesitamos entonces usar los elementos de headings, lo cual podemos ver
+      en el siguiente ejemplo:
+    </p>
+
+    <code class="block-code">
+      &lt;h1&gt;Título&lt;/h1&gt;<br>
+      &lt;p&gt;Contenido del primer heading.&lt;/p&gt;<br>
+      &lt;h2&gt;Subtítulo&lt;/h2&gt;<br>
+      &lt;p&gt;Contenido del segundo heading.&lt;/p&gt;<br>
+    </code>
+
+    <h4>Decoraciones</h4>
+
+    <p>
+      ¿Y si querés, no se, subrayar algo?
+      Eso es fácil, solo pones varios guiones abajo de lo que querés subrayar y listo.
+    </p>
+    <p>
+      La realidad es que no, no deberías estar haciendo eso para subrayar. El problema con hacerlo de
+      esta forma es que un usuario que esté usando un screen reader va a escuchar cada guión, esto
+      quiere decir que se escucharía algo como "guión, guión, guión". Completamente molesto e
+      innecesario cuando podés lograr lo mismo con css.
+    </p>
+
+    <h3>Mal uso de imagenes</h3>
+
+    <h4>Imagenes con contenido importante</h4>
+
+    <p>
+      Dado que usuarios de screen readers no van a poder ver las imagenes que tengas en tu página, o se
+      les va a dificultar por baja visión, es importante hacer uso del texto alternativo.
+    </p>
+    <div>
+      <p>
+        El texto alternativo es usado para dar una descripción de la imagen. Se puede agregar usando el atributo <code>alt</code> de la siguiente forma:
+      </p>
+    </div>
+    <code class="block-code">
+      &lt;img src="panpan.png" alt="Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas"&gt;
+    </code>
+    <p>
+      Si por ejemplo querémos tener dos imagenes en nuestra página es importante que cada una
+      tenga un texto alternativo descriptivo.
+      Puede pasar que agregemos una imagen con su texto alternativo correspondiente y después volvamos
+      a usar ese mismo para la siguiente. Esto estaría mal porque, a no ser que sean
+      exactamente la misma imagen, el texto alternativo no estaría describiendo fielmente a la
+      segunda.
+    </p>
+    <p>
+      Si hacemos eso entonces desde un screen reader terminaríamos obteniendo la misma descripción
+      para ambas, aún cuando no son iguales en contenido:
+    </p>
+    <div>
+      <p class="img">
+        Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas, graphic
+      </p>
+    </div>
+    <div>
+      <p class="img">
+        Panpan, de la serie Escandalosos, enojado con una corona de emojis de estrellas, graphic
+      </p>
+    </div>
+
+    <h4>Imagenes decorativas</h4>
+
+    <p>
+      Las imagenes en una página pueden también ser decorativas.
+      Esto se refiere a que no agregan contenido a la página, sino que su rol es simplemente visual.
+    </p>
+    <p>
+      Tal vez querés mostrar una imagen de un gatito que encontraste en internet ayer a la noche, pero
+      la cual no suma nada al contenido de tu página, por fuera de ser súper tierna.
+    </p>
+    <p>
+      Y como ya sabes del uso de alt decidís no ponerle uno, porque como es decorativa no importa. Así que
+      la agregas re feliz. Mira, es un re lindo gatito:
+    </p>
+    <div>
+      <p class="img">
+          Screenshot from 2018-10-25 23-04-51.png, graphic
+      </p>
+    </div>
+    <p>
+      Bueno, no sale como esperabas.
+      La realidad es que si no ponés el atributo alt, los screen readers van a leer el nombre del
+      archivo con la esperanza de que eso sea de ayuda.
+      En la mayoría de los casos, no lo es.
+    </p>
+    <p>
+      Si tu imagen no agrega valor al contenido de la página, y es puramente para decoración, entonces
+      podés especificar un alt vacío o mostrarla como un background por CSS.
+    </p>
 
     <h3>Mal uso de formularios</h3>
     <p>
