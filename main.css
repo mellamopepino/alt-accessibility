@@ -16,7 +16,7 @@ form, div {
   height: max-content;
 }
 
-aside, main > :is(:first-child, * ~ :not(form)), label, label ~ div, div.button, footer :is(p, h3), nav :is(p, li, h2) {
+aside, main > :first-child, main > * ~ :not(form), label, label ~ div, div.button, footer p, footer h3, nav p, nav li, nav h2 {
   height: 100vh;
   display: flex;
   flex-direction: column;
