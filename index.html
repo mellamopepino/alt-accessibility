@@ -133,9 +133,52 @@
 
   <h3>Mal uso del markup</h3>
 
+  <p>
+    Usar los elementos de HTML apropiados para cada cosa no solo tiene ventajas para los screen
+    readers, sino que varios elementos como los botones tienen funcionalidad ya incorporada.
+    Sin dejar de lado tampoco el hecho de que un buen uso de HTML da una estructura clara a tu
+    página, haciendo más fácil la selección de elementos para incorporar estilos desde CSS.
+  </p>
+
+  <p>
+    Pueden ver la
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">lista de elementos de HTML</a>
+    para tener una guía de cuales existen y para qué se usan.
+  </p>
+
   <h4>Listas</h4>
 
-  <p>Digamos que querés tener una lista no ordenada. Esta se vera algo como lo siguiente:</p>
+  <p>Digamos que querés tener una lista no ordenada. Con el siguiente HTML podés lograrlo:</p>
+
+  <code class="block-code bad-code">
+    &lt;p&gt; - Primer elemento.&lt;/p&gt;<br>
+    &lt;p&gt; - Segundo elemento.&lt;/p&gt;<br>
+    &lt;p&gt; - Tercer elemento.&lt;/p&gt;<br>
+  </code>
+
+  <p>
+    Pero de esa forma no se sabe que esa porción de HTML representa una lista.
+    Sino que cada elemento de esta es en realidad es un párrafo, y los bullets pasan a ser guiones.
+  </p>
+
+  <div>
+    <p>
+      Para lograr hacer una lista no ordenada tenemos los elementos <code>&lt;ul&gt;</code> y <code>&lt;li&gt;</code>.
+      Podemos ver su uso en el siguiente ejemplo:
+    </p>
+  </div>
+
+  <code class="block-code">
+    &lt;ul&gt;<br>
+    &nbsp;&nbsp;&lt;li&gt;Primer elemento.&lt;/li&gt;<br>
+    &nbsp;&nbsp;&lt;li&gt;Segundo elemento.&lt;/li&gt;<br>
+    &nbsp;&nbsp;&lt;li&gt;Tercer elemento.&lt;/li&gt;<br>
+    &lt;/ul&gt;
+  </code>
+
+  <p>
+    Con eso conseguiremos algo que se ve de la siguiente manera:
+  </p>
 
   <ul>
     <li>Primer elemento</li>
@@ -143,16 +186,38 @@
     <li>Tercer elemento</li>
   </ul>
 
-  <p>Con el siguiente HTML podés lograr tener una lista:</p>
+  <p>
+    Después podemos usar CSS para modificar los estilos de nuestras listas y conseguir que se vean como queremos.
+    Por ejemplo si queremos que se vea así:
+  </p>
+
+  <ul class="cool-list">
+    <li>Primer elemento</li>
+    <li>Segundo elemento</li>
+    <li>Tercer elemento</li>
+  </ul>
+
+  <p>
+    Tendríamos el siguiente HTML:
+  </p>
 
   <code class="block-code">
-    &lt;p&gt; - Primer elemento.&lt;/p&gt;<br>
-    &lt;p&gt; - Segundo elemento.&lt;/p&gt;<br>
-    &lt;p&gt; - Tercer elemento.&lt;/p&gt;<br>
+    &lt;ul class="cool-list"&gt;<br>
+    &nbsp;&nbsp;&lt;li&gt;Primer elemento.&lt;/li&gt;<br>
+    &nbsp;&nbsp;&lt;li&gt;Segundo elemento.&lt;/li&gt;<br>
+    &nbsp;&nbsp;&lt;li&gt;Tercer elemento.&lt;/li&gt;<br>
+    &lt;/ul&gt;
   </code>
 
-  <p>Pero de esa forma no se sabe que esa porción de HTML representa una lista. Sino que cada
-  elemento de la lista en realidad es un párrafo, y los bullets pasan a ser guiones.</p>
+  <p>
+    Con el siguiente CSS:
+  </p>
+
+  <code class="block-code">
+    .cool-list {
+
+    }
+  </code>
 
   <h4>Headings</h4>
 
