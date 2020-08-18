@@ -467,7 +467,7 @@
     <code class="block-code bad-code">
       &lt;button type="button" aria-labelledby="btn-upload-image-title"&gt;<br>
       &nbsp;&nbsp;&lt;title id="btn-upload-image-title"&gt;Upload image&lt;/title&gt;<br>
-      &nbsp;&nbsp;&lt;img src="./alguna-imagen.png" aria-hidden="true"&gt;<br>
+      &nbsp;&nbsp;&lt;img src="./alguna-imagen.png" alt=""&gt;<br>
       &lt;/button&gt;<br>
     </code>
     <div>
@@ -481,8 +481,8 @@
     <div>
       <p>
         Además de ahora tener una mejor descripción del botón, también agregamos un atributo
-        <code>aria-hidden="true"</code> a la imagen. Este lo que hace es esconder el elemento de los
-        screen readers, de esta forma nuestra imagen no molesta.
+        <code>alt=""</code> a la imagen.
+        Recordemos que a las imagenes decorativas se le pone el téxto alternativo vacío.
       </p>
     </div>
 
