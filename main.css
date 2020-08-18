@@ -116,3 +116,12 @@ aside p {
   padding: 0.5em;
   color: white;
 }
+
+.cool-list {
+  list-style-type: '(¬_¬)';
+  line-height: 3.5em;
+}
+
+.cool-list li {
+  padding-left: 1em;
+}
